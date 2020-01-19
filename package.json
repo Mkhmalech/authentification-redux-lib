@@ -1,21 +1,24 @@
 {
-  "name": "authentification-redux-lib",
-  "version": "1.0.0",
+  "author": {
+    "name": "khm@med"
+  },
+  "bugs": {
+    "url": "https://github.com/Mkhmalech/authentification-redux-lib/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "library for authentification with react redux typescript",
-  "main": "dist/index.ts",
+  "devDependencies": {
+    "redux": "^4.0.5"
+  },
   "files": [
     "src",
+    "dist",
     "index.d.ts",
     "package.json",
     "readme.md"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mkhmalech/authentification-redux-lib.git"
-  },
+  "homepage": "https://github.com/Mkhmalech/authentification-redux-lib#readme",
   "keywords": [
     "react",
     "authen",
@@ -25,13 +28,17 @@
     "password",
     "library"
   ],
-  "author": "khm@med",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Mkhmalech/authentification-redux-lib/issues"
+  "main": "dist/index.js",
+  "name": "authentification-redux-lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mkhmalech/authentification-redux-lib.git"
   },
-  "homepage": "https://github.com/Mkhmalech/authentification-redux-lib#readme",
-  "devDependencies": {
-    "redux": "^4.0.5"
-  }
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "dist/index.d.ts",
+  "version": "1.0.23"
 }
