@@ -14,8 +14,10 @@ export class Auth {
     setPassword = ( password : AuthPassword ) => this.Password = password;
 
     goIn = (dispatch : Dispatch) => {
-        console.log("dispatched")
-        dispatch({type : AuthActions.LOGIN_TO_WEBSITE, payload : {email : this.Email, password : this.Password}})
+        dispatch({
+            type : AuthActions.USER_ASK_LOGIN_TO_WEBSITE, 
+            payload : {email : this.Email, password : this.Password}
+        })
     }
 }
 

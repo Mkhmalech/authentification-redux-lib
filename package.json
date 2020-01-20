@@ -9,7 +9,8 @@
   "deprecated": false,
   "description": "library for authentification with react redux typescript",
   "devDependencies": {
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3"
   },
   "files": [
     "src",
@@ -39,6 +40,9 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "types": "dist/index.d.ts",
-  "version": "1.0.23"
+  "types": "src/index.d.ts",
+  "version": "1.0.23",
+  "dependencies": {
+    
+  }
 }

@@ -13,18 +13,17 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var AuthActions;
-(function (AuthActions) {
-    AuthActions["LOGIN_TO_WEBSITE"] = "@@auth/LOGIN_TO_WEBSITE";
-})(AuthActions = exports.AuthActions || (exports.AuthActions = {}));
+var Actions_1 = require("./Actions");
 var Auth = /** @class */ (function () {
     function Auth() {
         var _this = this;
         this.setEmail = function (email) { return _this.Email = email; };
         this.setPassword = function (password) { return _this.Password = password; };
         this.goIn = function (dispatch) {
-            console.log("dispatched");
-            dispatch({ type: AuthActions.LOGIN_TO_WEBSITE, payload: { email: _this.Email, password: _this.Password } });
+            dispatch({
+                type: Actions_1.AuthActions.USER_ASK_LOGIN_TO_WEBSITE,
+                payload: { email: _this.Email, password: _this.Password }
+            });
         };
     }
     return Auth;
