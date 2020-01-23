@@ -1,7 +1,7 @@
 import { combineReducers, Reducer } from 'redux'
 import { AuthActions } from './';
 
-const LoginReducer : Reducer= (state="hellooo", action ) => {
+const LoginReducer : Reducer= (state="login", action ) => {
     switch (action.type) {
         case AuthActions.LOGIN_TO_WEBSITE_FAIILED:
             console.log(action.error)
@@ -15,7 +15,27 @@ const LoginReducer : Reducer= (state="hellooo", action ) => {
     }
 }
 
+const SignupReducer : Reducer = (state="signup", action) =>{
+    switch (action.type) {
+        case "signup":   
+            return {...state};
+    
+        default:
+            return {...state};
+    }
+}
+
+const ForgetPasswordReducer : Reducer = (state="forgetpassword", action)=>{
+    switch (action.type) {
+        case "forgetpassword":
+            return {...state};    
+        default:
+            return {...state};
+    }
+}
 
 export default combineReducers({
-    login : LoginReducer
+    login : LoginReducer,
+    signup : SignupReducer,
+    forgetpassword : ForgetPasswordReducer
 })

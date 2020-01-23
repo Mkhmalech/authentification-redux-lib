@@ -28,8 +28,8 @@ function* watchFetchLabTests(){
     yield takeEvery(AuthActions.USER_ASK_LOGIN_TO_WEBSITE, loginToAccount)
 }
 
-function* LabTestsListingSaga(){
+function* AuthSaga(){
     yield all([fork(watchFetchLabTests)])
 }
 
-export default LabTestsListingSaga
+export default AuthSaga

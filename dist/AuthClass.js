@@ -25,6 +25,7 @@ var Auth = /** @class */ (function () {
                 payload: { email: _this.Email, password: _this.Password }
             });
         };
+        console.log("class is initialized");
     }
     return Auth;
 }());

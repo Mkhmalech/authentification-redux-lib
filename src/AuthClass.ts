@@ -7,7 +7,9 @@ export class Auth {
     private Password : AuthPassword | undefined;
 
     
-    constructor(){}
+    constructor(){
+        console.log("class is initialized");
+    }
 
     setEmail = (email : AuthEmail) => this.Email = email;
 

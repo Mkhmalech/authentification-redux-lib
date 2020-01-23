@@ -1,6 +1,6 @@
-type AuthEmail = string
-type AuthPassword = string
-type AuthConfirmPassword = string
+declare type AuthEmail = string
+declare type AuthPassword = string
+declare type AuthConfirmPassword = string
 
 interface Login {
     email : AuthEmail

@@ -1,5 +1,7 @@
 import { AuthActions } from './Actions';
 import { Auth } from './AuthClass';
-import LoginReducer from './reducers';
-export { LoginReducer, AuthActions };
+import AuthReducer from './reducers';
+import AuthSaga from './saga';
+export { AuthReducer, AuthActions, AuthSaga };
+export * from './types';
 export default Auth;
