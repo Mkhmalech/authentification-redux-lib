@@ -1,6 +1,6 @@
 type AuthEmail = string
-type AuthPassword = string
-type AuthToken = string
+declare type AuthPassword = string
+declare type AuthToken = string
 type Authenticated = boolean
 type AuthConfirmPassword = string
 
