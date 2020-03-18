@@ -1,6 +1,10 @@
-declare type AuthEmail = string
-declare type AuthPassword = string
-declare type AuthConfirmPassword = string
+type AuthEmail = string
+type AuthPassword = string
+type AuthToken = string
+type Authenticated = boolean
+type AuthConfirmPassword = string
+
+type AuthPath = string;
 
 interface Login {
     email : AuthEmail
