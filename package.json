@@ -21,7 +21,8 @@
     "library"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/index.js",  
+  "types": "src/auth.d.ts",
   "name": "authentification-redux-lib",
   "repository": {
     "type": "git",
@@ -31,9 +32,6 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "types": "src/auth.d.ts",
   "version": "1.0.33",
-  "dependencies": {
-    
-  }
+  "dependencies": { }
 }
