@@ -1,5 +1,5 @@
 import { combineReducers, Reducer } from 'redux'
-import { AuthActions } from './';
+import { AuthActions } from './Actions';
 
 const LoginReducer : Reducer= (state="login", action ) => {
     switch (action.type) {
@@ -34,7 +34,7 @@ const ForgetPasswordReducer : Reducer = (state="forgetpassword", action)=>{
     }
 }
 
-export default combineReducers({
+export const authReducer = combineReducers({
     login : LoginReducer,
     signup : SignupReducer,
     forgetpassword : ForgetPasswordReducer

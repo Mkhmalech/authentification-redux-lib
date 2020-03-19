@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { AuthActions } from "./Actions";
+import { AuthActions } from "../store/Actions";
 
 export class Auth {
 

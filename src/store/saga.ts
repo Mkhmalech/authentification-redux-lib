@@ -1,6 +1,6 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects'
 import { AuthActions } from './Actions';
-import { apiCall, api } from './config';
+import { apiCall, api } from '../config';
 
 
 
@@ -28,8 +28,6 @@ function* watchFetchLabTests(){
     yield takeEvery(AuthActions.USER_ASK_LOGIN_TO_WEBSITE, loginToAccount)
 }
 
-function* AuthSaga(){
+export function* AuthSaga(){
     yield all([fork(watchFetchLabTests)])
 }
-
-export default AuthSaga
