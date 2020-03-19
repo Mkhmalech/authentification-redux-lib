@@ -7,8 +7,9 @@ type AuthConfirmPassword = string
 type AuthPath = string;
 
 interface Login {
-    email : AuthEmail
-    password : AuthPassword
+    isAuth : Authenticated
+    email? : AuthEmail
+    token? : AuthToken
 }
 
 interface Signup {
