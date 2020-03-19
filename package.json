@@ -10,12 +10,6 @@
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3"
   },
-  "files": [
-    "dist",
-    "index.d.ts",
-    "package.json",
-    "readme.md"
-  ],
   "homepage": "https://github.com/Mkhmalech/authentification-redux-lib#readme",
   "keywords": [
     "react",
@@ -27,8 +21,7 @@
     "library"
   ],
   "license": "MIT",
-  "typing": "src/auth.d.ts",
-  "main": "index",
+  "main": "src/index.js",
   "name": "authentification-redux-lib",
   "repository": {
     "type": "git",
@@ -38,7 +31,7 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
+  "types": "src/auth.d.ts",
   "version": "1.0.33",
   "dependencies": {
     

@@ -3,8 +3,8 @@ import { AuthActions } from "../store/Actions";
 
 export class Auth {
 
-    private Email : AuthEmail | undefined;
-    private Password : AuthPassword | undefined;
+    private Email ? : AuthEmail ;
+    private Password ? : AuthPassword ;
 
     
     constructor(){
