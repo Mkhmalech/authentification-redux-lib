@@ -1,4 +1,5 @@
 import styled, { keyframes, createGlobalStyle } from "../../../theme/styled-components"
+import { device } from "../../../theme"
 
 export const animationFade = keyframes`
     0% {
@@ -99,6 +100,10 @@ export const LoginGlobalStyle = createGlobalStyle`
         & > div:nth-child(2) {
             display : none;
         }
+
+        ${device.mobile`
+            padding-top : 50px !important;
+        `}
     }
 
 `

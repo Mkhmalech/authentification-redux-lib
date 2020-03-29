@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "main": "index.ts",  
-  "typing": "src/auth.d.ts",
+  "typings": "src/auth.d.ts",
   "name": "authentification-redux-lib",
   "repository": {
     "type": "git",

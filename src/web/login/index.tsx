@@ -4,57 +4,63 @@ import { Label } from "../../common/Label";
 import { Input } from "../../common/Input";
 import { Button, LinkButton } from "../../common/Button";
 import { FormContainer } from "../../common/Form";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Ico } from '../../../../react-icons-sc/src/ico';
-import {user } from '../../icons/user'
-import {email } from '../../icons/email'
+import { user } from '../../icons/user'
+import { email } from '../../icons/email'
+import { Auth } from '../../controller/auth';
+import { connect } from 'react-redux';
+import { IttyniState } from '../../../../store/index';
 
 // styles
 
 
-interface PropsFromContext {
-
-}
+interface PropsFromContext { }
 
 
-export const Page: React.FunctionComponent<PropsFromContext> = () => {
+export const LoginComponent: React.FunctionComponent<PropsFromContext> = (props) => {
+    const auth = new Auth();
+
     return (
         <>
             <FormContainer>
                 <UserField>
                     <Label htmlFor="Email">
-                        <Ico {...user} 
+                        <Ico {...user}
                             styles={`
-                                height: 100%;
-                                display: inline-block;
-                                width: 100%;
-                                background:  rgb(239, 240, 243);
-                            `}
+                                    height: 100%;
+                                    display: inline-block;
+                                    width: 100%;
+                                    background:  rgb(239, 240, 243);
+                                `}
                         />
                     </Label>
                     <Input
                         type="text"
                         placeholder="Email"
+                        onChange={e => auth.setEmail(e.target.value)}
                     />
                 </UserField>
                 <Fields>
                     <Label htmlFor="txtPassword">
-                        <Ico {...email} 
+                        <Ico {...email}
                             styles={`
-                                height: 100%;
-                                display: inline-block;
-                                width: 100%;
-                                background:  rgb(239, 240, 243);
-                            `}
+                                    height: 100%;
+                                    display: inline-block;
+                                    width: 100%;
+                                    background:  rgb(239, 240, 243);
+                                `}
                         />
                     </Label>
                     <Input
                         type="password"
                         placeholder="Password"
+                        onChange={e => auth.setPassword(e.target.value)}
                     />
                 </Fields>
                 <Button
                     type="submit"
+                    onClick={auth.fetchUser}
                 >
                     <span >Log in</span>
                 </Button>
@@ -62,5 +68,7 @@ export const Page: React.FunctionComponent<PropsFromContext> = () => {
                 <LinkButton><Link to="/website/auth/reset-password" >J'Arrive Pas Acceder A Mon Compte?</Link></LinkButton>
             </FormContainer>
         </>
-    );
+    )
+
 }
+

@@ -1,23 +1,35 @@
+type AuthID = string
 type AuthEmail = string
+type AuthUsername = string
 type AuthPassword = string
-type AuthToken = string
 type Authenticated = boolean
 type AuthConfirmPassword = string
 
 type AuthPath = string;
 
-interface Login {
-    isAuth : Authenticated
-    email? : AuthEmail
-    token? : AuthToken
+interface AuthToken {
+    token : string
+    expiredPeriod? : number
 }
 
-interface Signup {
-    email : AuthEmail
-    password : AuthPassword
-    confirmPassword : AuthConfirmPassword
+interface AuthLoginState {
+    isAuth      : Authenticated
+    username?   : AuthUsername
+    userId?     : AuthID
 }
 
-interface ForgotPassword {
-    email : AuthEmail
+interface AuthSignupState {
+    email ?          : AuthEmail
+    password  ?      : AuthPassword
+    confirmPassword ?: AuthConfirmPassword
+}
+
+interface AuthForgotPasswordState {
+    email ? : AuthEmail
+}
+
+interface AuthState {
+    login?      : AuthLoginState
+    signup?     : AuthSignupState
+    fp?         : AuthForgotPasswordState
 }
