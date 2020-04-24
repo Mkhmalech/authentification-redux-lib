@@ -2,36 +2,44 @@ import * as React from 'react';
 import { AuthFooter } from './authFooter'
 import { AuthContainer, AuthContent, LoginGlobalStyle } from './authBody'
 import { Brand } from './authBrand'
-import { useRouteMatch, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import {LoginComponent} from './login'
 import { Signup } from './signup'
 import { ResetPassword } from './resetpassword'
 import { Auth } from '../controller/auth';
-import { IttyniState } from '../../../store';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-
-interface IAuthComponentProps extends AuthLoginState{}
+interface IAuthComponentProps {
+  isAuth : boolean
+  username : string
+  userId : string
+}
 
 export const AuthComponent: React.FunctionComponent<IAuthComponentProps> = ({isAuth, username, userId}) => {
   const labtests = new Auth()
     labtests.isLogged()
+  
+
+    isAuth = useSelector((state: any)=> state.auth.login.isAuth);
+    username = useSelector((state: any)=> state.auth.login.username);
+    userId = useSelector((state: any)=> state.auth.login.userId);
+  
+
   if(!isAuth){
     return (
       <>
         <LoginGlobalStyle />
-  
         <AuthContainer>
           <Brand />
           <AuthContent>
               
-              <Route path={`/website/auth/login`} component={LoginComponent} />
+              <Route path={`/auth/login`} component={LoginComponent} />
   
-              <Route path={`/website/auth/signup`} component={Signup} />
+              <Route path={`/auth/signup`} component={Signup} />
   
-              <Route path={`/website/auth/reset-password`} component={ResetPassword} /> 
+              <Route path={`/auth/reset-password`} component={ResetPassword} /> 
   
-              <Redirect to={`/website/auth/login`} />
+              <Redirect to={`/auth/login`} />
   
           </AuthContent>
           <AuthFooter />
@@ -40,6 +48,7 @@ export const AuthComponent: React.FunctionComponent<IAuthComponentProps> = ({isA
       </>
     );
   } else {
+    
     return (<Redirect to={{
       pathname : `/admin/${username}/`,
       state : {
@@ -50,11 +59,3 @@ export const AuthComponent: React.FunctionComponent<IAuthComponentProps> = ({isA
     } } />)
   }
 };
-
-const mapStateToProps = ({ Auth }: IttyniState) => ({
-  isAuth: Auth.login ? Auth.login.isAuth : false,
-  username: Auth.login ? Auth.login.username : undefined,
-  userId : Auth.login ? Auth.login.userId : undefined
-})
-
-export default connect(mapStateToProps)(AuthComponent);

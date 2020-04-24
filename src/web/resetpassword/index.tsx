@@ -10,11 +10,11 @@ export const ResetPassword: React.FunctionComponent<PropsFromContext> = () => {
         <>
             <FormContainer>
                 <Alert>
-                    <p>L'Enrgistrement a l'Application iTTyni est suspendue actuellement.</p>
+                    <p>L'Enrgistrement a l'Application est suspendue actuellement.</p>
                     <p>Merci de revenir plus tard.</p>
                 </Alert>
-                <LinkButton><Link to="/website/auth/login" >Vous Avez Deja un Compte</Link></LinkButton>
-                <LinkButton><Link to="/website/auth/signup" >Creer Un nouveau compte</Link></LinkButton>
+                <LinkButton><Link to="/auth/login" >Vous Avez Deja un Compte</Link></LinkButton>
+                <LinkButton><Link to="/auth/signup" >Creer Un nouveau compte</Link></LinkButton>
             </FormContainer>
         </>
     );

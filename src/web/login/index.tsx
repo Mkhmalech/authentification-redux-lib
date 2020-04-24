@@ -9,8 +9,6 @@ import { Ico } from '../../../../react-icons-sc/src/ico';
 import { user } from '../../icons/user'
 import { email } from '../../icons/email'
 import { Auth } from '../../controller/auth';
-import { connect } from 'react-redux';
-import { IttyniState } from '../../../../store/index';
 
 // styles
 
@@ -64,8 +62,8 @@ export const LoginComponent: React.FunctionComponent<PropsFromContext> = (props)
                 >
                     <span >Log in</span>
                 </Button>
-                <LinkButton><Link to="/website/auth/signup" >Creer Un Compte</Link></LinkButton>
-                <LinkButton><Link to="/website/auth/reset-password" >J'Arrive Pas Acceder A Mon Compte?</Link></LinkButton>
+                <LinkButton><Link to="/auth/signup" >Creer Un Compte</Link></LinkButton>
+                <LinkButton><Link to="/auth/reset-password" >J'Arrive Pas Acceder A Mon Compte?</Link></LinkButton>
             </FormContainer>
         </>
     )

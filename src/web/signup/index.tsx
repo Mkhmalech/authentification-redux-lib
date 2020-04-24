@@ -13,8 +13,8 @@ export const Signup: React.FunctionComponent<PropsFromContext> = () => {
                     <p>L'Enrgistrement a l'Application iTTyni est suspendue actuellement.</p>
                     <p>Merci de revenir plus tard.</p>
                 </Alert>
-                <LinkButton><Link to="/website/auth/login" >Vous Avez Deja un Compte</Link></LinkButton>
-                <LinkButton><Link to="/website/auth/reset-password" >J'Arrive Pas Acceder A Mon Compte?</Link></LinkButton>
+                <LinkButton><Link to="/auth/login" >Vous Avez Deja un Compte</Link></LinkButton>
+                <LinkButton><Link to="/auth/reset-password" >J'Arrive Pas Acceder A Mon Compte?</Link></LinkButton>
             </FormContainer>
         </>
     );

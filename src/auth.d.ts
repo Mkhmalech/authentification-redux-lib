@@ -29,7 +29,7 @@ interface AuthForgotPasswordState {
 }
 
 interface AuthState {
-    login?      : AuthLoginState
-    signup?     : AuthSignupState
-    fp?         : AuthForgotPasswordState
+    login      : AuthLoginState
+    signup     : AuthSignupState
+    fp         : AuthForgotPasswordState
 }

@@ -1,5 +1,5 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects'
-import * as config from '../../../store/config'
+import * as config from '../../../Store/config'
 import { AuthActions } from './actions';
 import { AnyAction } from 'redux';
 
