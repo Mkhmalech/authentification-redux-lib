@@ -11,7 +11,7 @@ function* handleFetchUser({path, payload}: any){
         if(res.errors){
             yield put({type : AuthActions.AUTH_LOGIN_FETCH_USER_ERROR ,error : res.errors[0].message})
         } else {
-            yield put({ type : AuthActions.AUTH_LOGIN_FETCH_USER_SUCCESS, payload : res.data.login })
+            yield put({ type : AuthActions.AUTH_LOGIN_FETCH_USER_SUCCESS, payload : res.data.users.login })
         }
     } catch(e) {
         throw new Error(e);

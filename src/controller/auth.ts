@@ -29,7 +29,7 @@ export class Auth {
     fetchUser = () => store.dispatch({
         type : AuthActions.AUTH_LOGIN_FETCH_USER,
         payload : {
-            query :`query { login(userInput: {email: "${this.email}", password: "${this.password}"}) { userId token username}}`
+            query :`mutation{users{login(userInput: {email: "${this.email}", password: "${this.password}"}) { userId token username}}}`
         },
         path : 'users'
     })
